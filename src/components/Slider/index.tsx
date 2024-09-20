@@ -1,37 +1,48 @@
-import { useEffect, useState } from "react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Scrollbar } from "swiper/modules"; // Import modules
 import { Swiper } from "swiper/react";
+import useDimensions from "../../hooks/useDimensions";
+import { useEffect, useState } from "react";
+import "./sliderStyle.css";
 
 interface SliderFuncProps {
   children: React.ReactNode[];
+  smallScreenSlide?: number;
 }
-const Slider: React.FC<SliderFuncProps> = ({ children }) => {
-  const [dimensions, setDimensions] = useState({
-    height: window.innerHeight,
-    width: window.innerWidth,
-  });
+
+const Slider: React.FC<SliderFuncProps> = ({
+  children,
+  smallScreenSlide = 2,
+}) => {
+  const { width } = useDimensions();
+  const [totalSlides, setTotalSlides] = useState(5);
+
   useEffect(() => {
-    setDimensions({
-      height: window.innerHeight,
-      width: window.innerWidth,
-    });
-  }, []);
+    if (width >= 1080) {
+      setTotalSlides(5);
+    } else if (width >= 720) {
+      setTotalSlides(4);
+    } else if (width >= 420) {
+      setTotalSlides(3);
+    } else {
+      setTotalSlides(smallScreenSlide);
+    }
+  }, [width]);
+
   return (
     <Swiper
-      slidesPerView={dimensions.width < 420 ? 2 : 5}
+      slidesPerView={totalSlides}
       spaceBetween={25}
-      pagination={{
-        clickable: true,
-      }}
       loop={true}
       autoplay={{
         delay: 3000,
         pauseOnMouseEnter: true,
       }}
-      modules={[Pagination, Autoplay]}
-      className="mySwiper"
+      pagination={{ clickable: true, el: ".swiper-pagination" }}
+      modules={[Pagination, Autoplay, Scrollbar]} // Add modules
+      className="py-6" // Position relative for proper arrow positioning
     >
       {children}
+      <div className="swiper-pagination -bottom-20 absolute"></div>
     </Swiper>
   );
 };

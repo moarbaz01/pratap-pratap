@@ -46,10 +46,10 @@ const Navbar = () => {
             <CiUser className="text-2xl md:text-xl stroke-[0.2px]" />
             <p className="text-md font-[400] hidden lg:block">Sign In</p>
           </div>
-          <div className="md:flex items-center cursor-pointer hidden hover:opacity-80 transition gap-2">
+          {/* <div className="md:flex items-center cursor-pointer hidden hover:opacity-80 transition gap-2">
             <CiFolderOn className="text-2xl md:text-xl stroke-[0.2px]" />
             <p className="text-md font-[400] hidden lg:block">My Projects</p>
-          </div>
+          </div> */}
           <div className="md:flex items-center cursor-pointer hover:opacity-80 transition gap-2">
             <CiShoppingCart className="text-3xl md:text-" />
             <p className="text-md font-[400] hidden lg:block">Cart</p>

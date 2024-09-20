@@ -1,0 +1,9 @@
+/* Custom styles for Swiper pagination dots */
+.swiper-pagination-bullet {
+  margin: 0 4px; /* Adjust the margin as needed */
+}
+
+/* Adjust the container of pagination if necessary */
+.swiper-pagination {
+  bottom: 10px; /* Adjust the position from the bottom */
+}
