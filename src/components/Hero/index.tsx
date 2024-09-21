@@ -2,7 +2,7 @@ import heroImage from "../../assets/heroImage.jpg";
 const Hero = () => {
   return (
     <>
-      <div className="bg-orange-50 py-12 md:px-6 px-4 md:h-[70vh] w-full">
+      <div className="bg-orange-50 py-12 md:px-6 px-4 md:h-[60vh] w-full">
         <div className="flex items-center md:flex-row flex-col justify-between h-full">
           <div className="flex-[1] flex flex-col md:pr-6">
             <p className="text-xl text-orange-400">Welcome to our store!</p>
@@ -18,10 +18,10 @@ const Hero = () => {
               Shop Now
             </button>
           </div>
-          <div className="flex items-center justify-center md:mt-0 mt-4 flex-[1] h-full ">
+          <div className="flex items-center justify-center md:mt-0 mt-4 flex-[1] h-[90%] ">
             <img
               src={heroImage}
-              className="h-full md:rounded-md rounded-tl-[50%] rounded-br-3xl w-full object-cover"
+              className="h-full md:rounded-lg rounded-tl-[50%] rounded-br-3xl w-full object-cover"
               alt="Hero"
             />
           </div>

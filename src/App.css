@@ -2,3 +2,18 @@
   box-sizing: border-box;
   letter-spacing: -1%;
 }
+
+.categoriesLinks::-webkit-scrollbar {
+  width: 5px;
+}
+
+.categoriesLinks::-webkit-scrollbar-thumb {
+  background: rgb(232, 230, 230);
+  width: 3px;
+  border: 7px solid transparent; /* This makes the thumb appear smaller */
+  background-clip: padding-box; /* Ensures the background stays inside the border */
+}
+
+.categoriesLinks::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
