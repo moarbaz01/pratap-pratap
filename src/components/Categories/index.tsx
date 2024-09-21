@@ -47,7 +47,7 @@ const data: { name: string; url: string }[] = [
 
 const Categories: React.FC<any> = () => {
   return (
-    <div className="md:py-12 py-6 x-6">
+    <div className="md:py-12 py-6 px-6">
       <h1 className="md:text-4xl text-2xl font-bold">Explore All Categories</h1>
       <div className="mt-2">
         <Slider smallScreenSlide={3}>
