@@ -15,7 +15,7 @@ const Banner: React.FC<BannerProps> = ({
 }) => {
   return (
     <>
-      <div className="flex md:absolute md:bottom-10 md:left-10 items-center md:items-start md:text-start text-center flex-col md:w-1/2 md:py-6 px-4 md:bg-white rounded-lg gap-4 md:shadow-lg">
+      <div className="flex md:absolute md:bottom-10 md:left-10 items-center md:items-start md:text-start text-center flex-col md:w-3/4 lg:w-2/3 md:py-6 px-4 md:bg-white rounded-lg gap-4 md:shadow-lg">
         <h1 className="text-3xl font-bold text-orange-600">{title}</h1>
         <p className="md:text-lg text-lg text-green-600">{subtitle}</p>
         <button className="bg-orange-500 py-3 px-6 w-fit rounded-md text-white hover:bg-orange-600">

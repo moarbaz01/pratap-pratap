@@ -39,7 +39,7 @@ const CustomSlider: React.FC<SliderFuncProps> = ({
   const [totalSlides, setTotalSlides] = useState(6);
 
   useEffect(() => {
-    if (width >= 1080) {
+    if (width >= 1280) {
       setTotalSlides(6);
     } else if (width >= 720) {
       setTotalSlides(4);

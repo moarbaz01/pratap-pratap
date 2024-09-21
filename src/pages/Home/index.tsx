@@ -223,12 +223,13 @@ const Home = () => {
       {/* Products */}
       <div className="py-12 px-4 md:px-6 bg-gray-50">
         <h1 className="text-2xl md:text-4xl font-bold">New Arrivals</h1>
-        <div className="grid md:grid-cols-6 mt-6 grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 mt-6 grid-cols-2 gap-4">
           {productsData.map((item, index) => (
             <ProductCard key={index + item.title} {...item} />
           ))}
         </div>
       </div>
+      <PrintingSection />
       {/* Products */}
       <div className="py-12 px-4 md:px-6">
         <h1 className="text-2xl md:text-3xl font-bold">Trending Products</h1>
@@ -241,8 +242,6 @@ const Home = () => {
         </Slider>
       </div>
 
-      <PrintingSection />
-
       {/* `Banners */}
       <div className="py-8">
         <div className="flex items-center md:flex-row flex-col gap-2">
@@ -250,7 +249,7 @@ const Home = () => {
             <div
               className="md:w-1/2 w-full md:h-[50vh] py-8 bg-gray-50 md:bg-none bg-blend-darken md:relative bg-cover bg-center"
               style={{
-                backgroundImage: `url(${width > 420 ? item.image : ""})`,
+                backgroundImage: `url(${width > 720 ? item.image : ""})`,
               }}
               key={index}
             >
