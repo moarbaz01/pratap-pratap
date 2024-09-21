@@ -1,50 +1,62 @@
 import Slider from "../Slider";
-import logo from "../../assets/logo.png";
-import { SwiperSlide } from "swiper/react";
+import cat1 from "../../assets/cat1.png";
+import cat2 from "../../assets/cat2.png";
+import cat3 from "../../assets/cat3.png";
+import cat4 from "../../assets/cat4.png";
+import cat5 from "../../assets/cat5.png";
+import cat6 from "../../assets/cat6.png";
+import cat7 from "../../assets/cat7.png";
+import cat8 from "../../assets/cat8.png";
 import CategoryItem from "../CategoryItem";
 
 //
 const data: { name: string; url: string }[] = [
   {
-    name: "Business Cards",
-    url: logo,
+    name: "Calenders",
+    url: cat1,
   },
   {
-    name: "Flyers & Posters",
-    url: logo,
+    name: "Clock",
+    url: cat2,
   },
   {
-    name: "Custom Mugs",
-    url: logo,
+    name: "Laser Ingraving",
+    url: cat3,
   },
   {
-    name: "T-Shirts & Apparel",
-    url: logo,
+    name: "Mobile Stand",
+    url: cat4,
   },
   {
-    name: "Banners",
-    url: logo,
+    name: "Photo Frame",
+    url: cat5,
   },
   {
-    name: "Stickers",
-    url: logo,
+    name: "Pen Stand",
+    url: cat6,
   },
   {
-    name: "Calendars",
-    url: logo,
+    name: "Table Clock",
+    url: cat7,
+  },
+  {
+    name: "Clip Board",
+    url: cat8,
   },
 ];
 
 const Categories: React.FC<any> = () => {
   return (
-    <div className="py-12 px-6">
-      <h1 className="md:text-2xl text-xl font-bold">Explore All Categories</h1>
-      <div className="mt-6">
-        <Slider>
+    <div className="md:py-12 px-6">
+      <h1 className="md:text-4xl text-2xl font-bold">Explore All Categories</h1>
+      <div className="mt-2">
+        <Slider smallScreenSlide={3}>
           {data.map((item, index) => (
-            <SwiperSlide className="" key={index}>
-              <CategoryItem name={item.name} url={item.url} />
-            </SwiperSlide>
+            <CategoryItem
+              key={index + item.name}
+              name={item.name}
+              url={item.url}
+            />
           ))}
         </Slider>
       </div>

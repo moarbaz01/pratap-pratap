@@ -6,29 +6,25 @@ interface ProductCardProps {
   title: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({
-  url,
-  category,
-  price,
-  tag,
-  title,
-}) => {
+const ProductCard: React.FC<ProductCardProps> = ({ url, tag, title }) => {
+  console.log(url);
   return (
-    <div className="bg-white shadow rounded-lg relative">
-      <div className="aspect-square flex items-center justify-center md:max-h-[400px] p-2 w-full">
-        <img src={url} alt="" className="w-full object-contain" />
+    <div className=" relative md:h-[350px] rounded-md border cursor-pointer hover:bg-gray-100 transition px-2 py-4 h-[200px]">
+      <div className="h-[80%] md:h-[75%]">
+        <img
+          src={url}
+          alt={title}
+          className="rounded-t-lg h-full object-contain w-full"
+        />
       </div>
-      <div className="p-4">
-        <h2 className="text-lg font-semibold">{category}</h2>
-        <p className="text-gray-600">{title}</p>
-        {/* <div className="flex items-center justify-between mt-4">
-          <span className="text-lg font-bold">${price}</span>
-          <button className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition">
-            Add to Cart
-          </button>
-        </div> */}
-      </div>
-      <div className="bg-green-300 absolute left-1 top-1 py-1 px-2">{tag}</div>
+      <h3 className="md:text-lg mt-6 text-sm font-semibold truncate">
+        {title}
+      </h3>
+      {tag && (
+        <div className="bg-green-500 font-bold text-white rounded-tl-xl rounded-br-lg absolute left-1 top-1 py-1 px-3 text-sm shadow-md">
+          {tag}
+        </div>
+      )}
     </div>
   );
 };

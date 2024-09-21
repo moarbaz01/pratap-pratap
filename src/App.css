@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
 * {
   box-sizing: border-box;
   letter-spacing: -1%;
 }
-
+body {
+  background: hsla(0, 0%, 100%, 1);
+  font-family: "Hind", system-ui;
+}
 .categoriesLinks::-webkit-scrollbar {
   width: 5px;
 }
